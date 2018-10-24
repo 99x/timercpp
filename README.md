@@ -49,3 +49,9 @@ int main() {
     while(true); // Keep main thread active
 }
 ```
+
+### How to compile sample program?
+
+```bash
+g++ sample.cpp -std=c++14 -pthread
+```
