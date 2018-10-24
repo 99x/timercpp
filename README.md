@@ -1,7 +1,7 @@
 # timercpp
 Javascript like timer for c++ developers
 
-This header only library has js equivalent `setTimeout()` and `setInterval()` for c++ (multithreaded).
+This header only library has js equivalent `setTimeout()` and `setInterval()` for c++.
 
 ## `setTimeout(auto function, int delay)`
 
