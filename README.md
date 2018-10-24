@@ -50,6 +50,18 @@ int main() {
 }
 ```
 
+**Output**
+
+```
+I am Timer
+Hey.. After each 1s...
+Hey.. After each 1s...
+Hey.. After each 1s...
+Hey.. After each 1s...
+Hey.. After each 1s...
+Hey.. After 5.2s. But I will stop the timer!
+```
+
 ### How to compile sample program?
 
 ```bash
