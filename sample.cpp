@@ -20,5 +20,5 @@ int main() {
     cout << "I am Timer" <<endl;
 
 
-    while(true);
+    while(true); // Keep mail thread active
 }
