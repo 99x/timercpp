@@ -3,6 +3,8 @@ Javascript like timer for c++ developers
 
 This header only library has js equivalent `setTimeout()` and `setInterval()` for c++.
 
+**DISCLAIMER - This implementation uses threads not a queue**
+
 ## `setTimeout(auto function, int delay)`
 
 ```c++
