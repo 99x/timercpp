@@ -69,3 +69,7 @@ Hey.. After 5.2s. But I will stop the timer!
 ```bash
 g++ sample.cpp -std=c++14 -pthread
 ```
+
+### License
+
+[MIT](https://github.com/shalithasuranga/timercpp/edit/master/LICENSE)
