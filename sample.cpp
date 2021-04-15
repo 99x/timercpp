@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    Timer t = Timer();
+    Timer t;
 
     t.setInterval([&]() {
         cout << "Hey.. After each 1s..." << endl;
