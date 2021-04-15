@@ -1,10 +1,11 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <atomic>
 
 class Timer {
-    bool clear = false;
-
+	std::atomic<bool> active{true};
+	
     public:
         void setTimeout(auto function, int delay);
         void setInterval(auto function, int interval);
@@ -13,23 +14,22 @@ class Timer {
 };
 
 void Timer::setTimeout(auto function, int delay) {
-    this->clear = false;
+    active = true;
     std::thread t([=]() {
-        if(this->clear) return;
+        if(!active.load()) return;
         std::this_thread::sleep_for(std::chrono::milliseconds(delay));
-        if(this->clear) return;
+        if(!active.load()) return;
         function();
     });
     t.detach();
 }
 
 void Timer::setInterval(auto function, int interval) {
-    this->clear = false;
+    active = true;
     std::thread t([=]() {
-        while(true) {
-            if(this->clear) return;
+        while(active.load()) {
             std::this_thread::sleep_for(std::chrono::milliseconds(interval));
-            if(this->clear) return;
+            if(!active.load()) return;
             function();
         }
     });
@@ -37,5 +37,5 @@ void Timer::setInterval(auto function, int interval) {
 }
 
 void Timer::stop() {
-    this->clear = true;
+    active = false;
 }
