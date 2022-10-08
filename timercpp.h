@@ -1,3 +1,6 @@
+#ifndef TIMERCPP_H_INCLUDED
+#define TIMERCPP_H_INCLUDED
+
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -39,3 +42,5 @@ void Timer::setInterval(auto function, int interval) {
 void Timer::stop() {
     active = false;
 }
+
+#endif
